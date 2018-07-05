@@ -4,6 +4,7 @@
   "description": "A full-stack application using test-first development for organizing live votes for parties, conferences, meetings, and other gatherings of people. Following this great tutorial: https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node index.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
     "test:watch": "npm run test -- --watch"
   },
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "immutable": "^3.8.2",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "socket.io": "^2.1.1"
   }
 }
