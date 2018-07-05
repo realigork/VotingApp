@@ -1,0 +1,24 @@
+{
+  "name": "voting-server",
+  "version": "1.0.0",
+  "description": "A full-stack application using test-first development for organizing live votes for parties, conferences, meetings, and other gatherings of people. Following this great tutorial: https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "chai-immutable": "^1.6.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "immutable": "^3.8.2"
+  }
+}
