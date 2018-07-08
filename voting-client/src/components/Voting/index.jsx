@@ -3,21 +3,27 @@ import React from 'react';
 class Voting extends React.Component{
   constructor() {
     super();
-    this.getPair = this.getPair.bind(this);
+    this.renderPair = this.renderPair.bind(this);
   }
 
-  getPair() {
-    return this.props.pair || [];
+  renderPair() {
+    return this.props.pair.map(entry => {
+      return (
+        <button key={entry}>
+          <h1>{entry}</h1>
+        </button>
+      );
+    });
   }
 
   render() {
+    let renderedPair = null;
+    if (this.props.pair.length) {
+      renderedPair = this.renderPair();
+    }
     return(
       <div className="voting">
-        {this.getPair().map(entry => {
-          <button key={entry}>
-            <h1>{entry}</h1>
-          </button>
-        })}
+        {renderedPair}
       </div>
     );
   }
