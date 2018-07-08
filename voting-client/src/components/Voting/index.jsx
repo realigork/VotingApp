@@ -41,7 +41,11 @@ class Voting extends React.Component{
     }
     return(
       <div className="voting">
-        {renderedPair}
+        {
+          this.props.winner ?
+            <div ref="winner">Winner is {this.props.winner}</div> :
+            {renderedPair}
+        }
       </div>
     );
   }
