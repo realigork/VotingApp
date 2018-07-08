@@ -9,7 +9,7 @@ class Voting extends React.Component{
   renderPair() {
     return this.props.pair.map(entry => {
       return (
-        <button key={entry}>
+        <button key={entry} onClick={() => this.props.vote(entry)}>
           <h1>{entry}</h1>
         </button>
       );
