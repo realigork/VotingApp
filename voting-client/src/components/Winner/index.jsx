@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Winner = ({ winner = '' }) => (
-  <div className="winner">
-    Winner is {winner}!
-  </div>
-);
+class Winner extends React.Component {
+  render() {
+    return (
+      <div className="winner">
+        Winner is {this.props.winner}!
+      </div>
+    )
+  }
+};
 
 export default Winner;
