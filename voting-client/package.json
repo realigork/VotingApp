@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack-dev-server --hot",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch"
   },
@@ -20,12 +20,15 @@
     "chai-immutable": "^1.6.0",
     "jsdom": "^11.11.0",
     "mocha": "^5.2.0",
+    "react-hot-loader": "^4.3.3",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
     "webpack-command": "^0.4.1",
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "immutable": "^3.8.2"
+    "immutable": "^3.8.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
