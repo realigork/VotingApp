@@ -105,7 +105,6 @@ describe('Voting', () => {
 
     let firstButton = scryRenderedDOMComponentsWithTag(component, 'button')[0];
     expect(firstButton.textContent).to.equal('Trainspotting');
-    console.log(firstButton);
 
     const newPair = pair.set(0, 'Sunshine');
     component = ReactDOM.render(

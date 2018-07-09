@@ -37,7 +37,13 @@ class Vote extends React.Component{
 
   render() {
     let renderedPair = null;
-    if (this.props.pair.length) {
+    // Doing a check for standard array because .length
+    // is not working with Immutable List 09/07/2018
+    const pairLength = (Array.isArray(this.props.pair)) ?
+      this.props.pair.length :
+      this.props.pair.size;
+
+    if (pairLength) {
       renderedPair = this.renderPair();
     }
     return(
