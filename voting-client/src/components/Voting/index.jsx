@@ -2,7 +2,7 @@ import React from 'react';
 import Vote from './vote';
 import Winner from '../Winner';
 
-class Voting extends React.Component{
+class Voting extends React.PureComponent {
   render() {
     return (
       <div>
