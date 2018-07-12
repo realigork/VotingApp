@@ -1,4 +1,6 @@
 import React from 'react';
+import Tally from './tally';
+import Winner from '../Winner';
 
 export default class Results extends React.PureComponent {
   constructor() {
@@ -14,17 +16,19 @@ export default class Results extends React.PureComponent {
   }
 
   render() {
-    return (
-      <div className='results'>
-        {this.props.pair.map(entry =>
-          <div key='entry' className='entry'>
-            <h1>{entry}</h1>
-            <div className='voteCount'>
-              {this.getVotes(entry)}
-            </div>
-          </div>
-        )}
-      </div>
-    );
+    return this.props.winner ?
+      <Winner ref="winner" winner={this.props.winner} /> :
+      <div className="results">
+        <div className="tally">
+          {this.props.pair.map(entry =>
+            <Tally key={entry} entry={entry} votes={() => this.getVotes(entry)} />
+          )}
+        </div>
+        <div className="management">
+          <button ref="next" className="next" onClick={this.props.next}>
+            Next
+          </button>
+        </div>
+      </div>;
   }
 }
