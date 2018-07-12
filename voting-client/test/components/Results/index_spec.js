@@ -13,7 +13,7 @@ import Results from '../../../src/components/Results';
 describe('Results', () => {
   it('renders entries with vote counts or zero', () => {
     const pair = List.of('Trainspotting', '28 Days Later');
-    const tally = Map({ 'Trainspotting': 5 });
+    const tally = Map({'Trainspotting': 5});
     const component = renderIntoDocument(
       <Results pair={pair} tally={tally} />
     );
@@ -24,7 +24,7 @@ describe('Results', () => {
     expect(train).to.contain('Trainspotting');
     expect(train).to.contain('5');
     expect(days).to.contain('28 Days Later');
-    expect(days).to.contain(0);
+    expect(days).to.contain('0');
   });
 
   it('invokes the next callback when next button is clicked', () => {
@@ -33,7 +33,9 @@ describe('Results', () => {
 
     const pair = List.of('Trainspotting', '28 Days Later');
     const component = renderIntoDocument(
-      <Results pair={pair} tally={Map()} next={next} />
+      <Results pair={pair}
+               tally={Map()}
+               next={next}/>
     );
     Simulate.click(ReactDOM.findDOMNode(component.refs.next));
 

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Tally = ({ entry }) => (
+const Tally = ({ entry, votes }) => (
   <div key="entry" className="entry">
     <h1>{entry}</h1>
     <div className="voteCount">
-      {this.getVotes(entry)}
+      {votes(entry)}
     </div>
   </div>
 );
